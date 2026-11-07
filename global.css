@@ -1,0 +1,4 @@
+/* Create global.css at the project root with the following configuration. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

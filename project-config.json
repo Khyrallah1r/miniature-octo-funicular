@@ -1,0 +1,174 @@
+{
+  "project": {
+    "name": "expo-template",
+    "version": "1.0.0",
+    "type": "expo-react-native-app",
+    "description": "An Android-first mobile app template built with Expo and React Native for Android app generation and Web preview in the current product flow"
+  },
+  "techStack": {
+    "core": {
+      "expo": "~54.0.33",
+      "react": "19.1.0",
+      "reactNative": "0.81.5",
+      "typescript": "~5.9.3"
+    },
+    "routing": {
+      "expoRouter": "~6.0.23",
+      "reactNavigation": "^7.1.28",
+      "reactNavigationBottomTabs": "^7.12.0"
+    },
+    "styling": {
+      "nativewind": "^4.2.1",
+      "tailwindcss": "^3.4.19",
+      "note": "NativeWind 4.2.1 supports Tailwind CSS v3 only and does not support v4"
+    },
+    "features": {
+      "fileBasedRouting": true,
+      "darkMode": true,
+      "platformSupport": ["android", "web"],
+      "newArchitecture": true,
+      "reactCompiler": true,
+      "typedRoutes": true
+    }
+  },
+  "projectStructure": {
+    "app": {
+      "path": "app/",
+      "description": "Main app directory using Expo Router file-based routing",
+      "routes": [
+        {
+          "path": "/",
+          "file": "app/index.tsx",
+          "name": "Home",
+          "type": "screen"
+        },
+        {
+          "path": "/modal",
+          "file": "app/modal.tsx",
+          "name": "Modal",
+          "type": "modal"
+        }
+      ],
+      "layouts": [
+        {
+          "file": "app/_layout.tsx",
+          "type": "root",
+          "description": "Root layout with stack navigation and theming"
+        }
+      ]
+    },
+    "components": {
+      "path": "components/",
+      "description": "Directory for reusable components",
+      "ui": {
+        "path": "components/ui/",
+        "description": "Base UI components"
+      }
+    },
+    "constants": {
+      "path": "constants/",
+      "description": "Directory for shared constants",
+      "theme": {
+        "file": "constants/theme.ts",
+        "description": "Theme colors and font settings"
+      }
+    },
+    "hooks": {
+      "path": "hooks/",
+      "description": "Directory for custom hooks"
+    },
+    "assets": {
+      "path": "assets/",
+      "description": "Directory for static assets"
+    },
+    "types": {
+      "path": "types/",
+      "description": "Directory for TypeScript type definitions"
+    }
+  },
+  "routing": {
+    "system": "expo-router",
+    "type": "file-based",
+    "rules": [
+      "Files under app/ automatically become routes",
+      "_layout.tsx defines layout and navigation settings"
+    ]
+  },
+  "styling": {
+    "system": "nativewind",
+    "configFile": "tailwind.config.js",
+    "globalStyles": "global.css",
+    "contentPaths": [
+      "./app/**/*.{js,jsx,ts,tsx}",
+      "./components/**/*.{js,jsx,ts,tsx}",
+      "./hooks/**/*.{js,jsx,ts,tsx}",
+      "./constants/**/*.{js,jsx,ts,tsx}"
+    ],
+    "themeSupport": {
+      "light": {
+        "text": "#11181C",
+        "background": "#fff",
+        "tint": "#0a7ea4"
+      },
+      "dark": {
+        "text": "#ECEDEE",
+        "background": "#151718",
+        "tint": "#fff"
+      }
+    }
+  },
+  "scripts": {
+    "start": "Start the development server",
+    "android": "Run in the Android emulator",
+    "web": "Run in the Web browser",
+    "lint": "Run lint checks",
+    "reset-project": "Reset the project and move sample code to the app-example directory"
+  },
+  "pathAliases": {
+    "@/*": "./*",
+    "description": "Use the @/ prefix to reference files from the project root"
+  },
+  "development": {
+    "commands": {
+      "install": "pnpm install",
+      "start": "pnpm start",
+      "android": "pnpm run android",
+      "web": "pnpm run web"
+    },
+    "packageManager": "pnpm",
+    "nodeVersion": ">=20.19.0",
+    "bestPractices": [
+      "Use TypeScript types and avoid any",
+      "Keep components focused on a single responsibility for easier testing and reuse",
+      "Use NativeWind class names consistently for styling",
+      "Follow Expo Router file-based routing conventions",
+      "Prioritize consistency between the Android experience and the Web preview"
+    ]
+  },
+  "extension": {
+    "suggestions": {
+      "stateManagement": ["Zustand", "Redux", "Jotai"],
+      "apiClient": ["axios", "a wrapped fetch client"],
+      "formHandling": ["React Hook Form"],
+      "dataPersistence": ["In-memory state by default", "SQLite only when explicitly required"],
+      "authentication": ["Expo AuthSession", "a third-party authentication library"]
+    },
+    "codeOrganization": {
+      "businessLogic": "the matching route files under app/",
+      "reusableComponents": "the components/ directory",
+      "utilityFunctions": "the utils/ directory, recommended to create if needed",
+      "apiCode": "the services/ or api/ directory, recommended to create if needed",
+      "typeDefinitions": "the types/ directory"
+    }
+  },
+  "notes": [
+    "This project uses the React Native New Architecture, so verify dependency compatibility",
+    "This project enables React Compiler, so keep compiler-friendly patterns in mind",
+    "typedRoutes provides stronger route type hints",
+    "NativeWind 4.2.1 supports Tailwind CSS v3.x only, so do not upgrade to v4",
+    "NativeWind does not support every Tailwind CSS feature, so verify compatibility when styling",
+    "The current product flow supports Android app generation and Web preview only, so do not promise iOS delivery",
+    "This project supports pnpm only; keep package.json and pnpm-lock.yaml aligned to avoid runtime issues",
+    "Do not add @react-native-async-storage/async-storage by default; only introduce persistence dependencies when the user explicitly requests local storage and the dependency is confirmed compatible with the current Expo Android build flow"
+  ]
+}

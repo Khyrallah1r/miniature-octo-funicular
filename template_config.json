@@ -1,0 +1,22 @@
+{
+  "name": "expo-template",
+  "description": "A minimal Expo (React Native) template for Android app generation and web preview in the current product flow. It uses Expo SDK 54, Expo Router for file-based routing, NativeWind for styling, and pnpm only. It includes a basic project structure. Suitable as the default Android/mobile template when the user does not specify a stack. Key directories: app/ (routes and screens), components/, constants/, hooks/. Do not modify files outside these unless necessary.",
+  "required_fields": ["OVERVIEW_TITLE", "OVERVIEW_DESCRIPTION", "OVERVIEW_LOGO_URL"],
+  "required_files": [
+    "README.md",
+    "package.json",
+    "app.json",
+    "app/_layout.tsx",
+    "app/index.tsx",
+    "global.css",
+    "tailwind.config.js",
+    "tsconfig.json",
+    "babel.config.js",
+    "metro.config.js",
+    "constants/theme.ts"
+  ],
+  "style": "expo",
+  "scene": "default_mobile_project",
+  "lang": "TypeScript",
+  "framework": "React"
+}

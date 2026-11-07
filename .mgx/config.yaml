@@ -1,0 +1,4 @@
+build: pnpm run export-web
+build_path: dist
+dev: pnpm start --web --port 8081
+install: pnpm i
